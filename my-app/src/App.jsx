@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./app.css";
+import "./App.css";
 
 function FolderView({ title, folders, openWindow }) {
   const isMobile = window.innerWidth <= 768;
@@ -315,7 +315,7 @@ export default function RetroDesktop() {
       content: (
         <div>
           <h2>Download my Resume here</h2>
-          <a href="/files/my-document.pdf" download="Oliver Weinzettl Resume">Download PDF</a>
+          <a href="/Resume.pdf" download="Oliver Weinzettl Resume">Download PDF</a>
         </div>
       ),
     },
