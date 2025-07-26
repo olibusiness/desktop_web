@@ -1,0 +1,295 @@
+/* ===== Desktop Base ===== */
+.desktop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(54,100,139,255);
+  color: white;
+  font-family: monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Top Dock Bar ===== */
+.top-dock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 32px;
+  width: 100%;
+  background-color: #dcdcdc;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 14px;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.menu {
+  font-weight: bold;
+}
+
+.clock {
+  font-family: sans-serif;
+  max-width: 180px;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 26px;
+  font-family: monospace;
+}
+
+/* ===== Right-side Icon Column ===== */
+.icon-column {
+  position: absolute;
+  top: 48px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 10;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.desktop-icon:hover {
+  opacity: 0.7;
+}
+
+.icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.desktop-icon .icon-img[src*="txt.png"] {
+  width: 60px;
+  height: auto;
+  max-height: 60px;
+}
+
+
+.dock-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.icon-text {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 11px;
+  word-wrap: break-word;
+  font-weight: 600;
+}
+
+/* ===== Windows ===== */
+.window {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  width: 380px;
+  height: 280px;
+  background-color: white;
+  color: black;
+  border: 2px solid #000;
+  box-shadow: 4px 4px #333;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+#Sendometer, 
+#connect4, #ENG1011 {
+  height: 400px;
+}
+
+.window-header {
+  background-color: #0066ff;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  color: white;
+}
+
+.close-btn {
+  background-color: #e81123;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.window-content {
+  padding: 12px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* ===== Bottom Dock ===== */
+.bottom-dock {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  background-color: rgba(255, 255, 255, 0.8); /* white & transparent */
+  padding: 8px 12px;
+  border-radius: 12px;
+  z-index: 150;
+}
+
+
+.dock-label {
+  margin-top: 4px;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.2s;
+  position: absolute;
+  top: -16px;
+  pointer-events: none;
+}
+
+.dock-icon:hover .dock-label {
+  opacity: 1;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-image {
+  width: 150px; /* adjust as needed */
+  height: auto;
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-image:hover {
+  transform: scale(1.1);
+}
+
+.folder-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.subfolder-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  cursor: pointer;
+}
+
+.subfolder-icon .icon-img {
+  width: 48px;
+  height: 48px;
+}
+
+.subfolder-icon .icon-text {
+  font-size: 0.8rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+
+@media (max-width: 515px) {
+  .bottom-dock {
+    gap: 12px;
+    padding: 6px 8px;
+    bottom: 6px;
+  }
+
+  .dock-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .dock-label {
+    font-size: 8px;
+    top: -12px;
+  }
+
+  .icon-text {
+    font-size: 10px;
+  }
+
+  .desktop-icon {
+    width: 48px;
+  }
+
+  .icon-img {
+    width: 36px;
+    height: 36px;
+  }
+  .window {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .window-header {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .window-content {
+    padding: 16px;
+  }
+
+  .bottom-dock.hidden {
+    display: none !important;
+  }
+  .window-content p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .window-content h2 {
+    font-size: 22px;
+  }
+
+  .window-content ul,
+  .window-content li {
+    font-size: 16px;
+  }
+}
+
