@@ -494,16 +494,14 @@ export default function RetroDesktop() {
             {window.innerWidth <= 768 ? (
               <>
                 <p>Thanks for visiting my portfolio. I am Oliver, an engineering
-              student at Monash! Double click icons to explore my work and
-              background.</p>
+              student at Monash! click on icons to explore my projects and work.</p>
                 <p style={{ marginTop: "1em" }}>
                   For the best desktop experience, open this website on your <strong>computer</strong>. Click the <strong>✕</strong> in the corner to close this window.
                 </p>
               </>
             ) : (
               <p>Thanks for visiting my portfolio. I am Oliver, an engineering
-              student at Monash! Double click icons to explore my work and
-              background.</p>
+              student at Monash! Double click icons to explore my projects and work.</p>
             )}
           </div>
         ),
