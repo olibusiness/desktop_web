@@ -111,26 +111,26 @@ export default function RetroDesktop() {
           <p>Here are some photos from the Sendometer project:</p>
           <div className="image-gallery">
             <img
-              src="/Sendometer/fullShot.jpg"
+              src="/Sendometer/fullshotsmall.jpg"
               alt="Sendometer screenshot 1"
               className="project-image"
               onClick={() =>
                 openWindow({
                   id: "send1",
                   name: "send1.jpeg",
-                  content: <ImageViewer src="/Sendometer/fullShot.jpg" alt="Sendometer screenshot 1" />,
+                  content: <ImageViewer src="/Sendometer/fullshotsmall.jpg" alt="Sendometer screenshot 1" />,
                 })
               }
             />
             <img
-              src="/Sendometer/shotAbove.jpg"
+              src="/Sendometer/shotAboveSmall.jpg"
               alt="Sendometer photo 2"
               className="project-image"
               onClick={() =>
                 openWindow({
                   id: "send2",
                   name: "send2.jpeg",
-                  content: <ImageViewer src="/Sendometer/shotAbove.jpg" alt="Sendometer photo 2" />,
+                  content: <ImageViewer src="/Sendometer/shotAboveSmall.jpg" alt="Sendometer photo 2" />,
                 })
               }
             />
