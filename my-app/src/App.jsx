@@ -61,6 +61,25 @@ function FolderView({ title, folders, openWindow }) {
 }
 
 
+function ImageViewer({ src, alt }) {
+  return (
+    <div style={{ textAlign: "center", width: "100%", height: "100%" }}>
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          maxWidth: "100%",
+          maxHeight: "100%",
+          objectFit: "contain",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+        }}
+      />
+    </div>
+  );
+}
+
+
 
 
 
@@ -92,16 +111,31 @@ export default function RetroDesktop() {
           <p>Here are some photos from the Sendometer project:</p>
           <div className="image-gallery">
             <img
-              src="/Sendometer/send1.jpeg"
+              src="/Sendometer/fullShot.jpg"
               alt="Sendometer screenshot 1"
               className="project-image"
+              onClick={() =>
+                openWindow({
+                  id: "send1",
+                  name: "send1.jpeg",
+                  content: <ImageViewer src="/Sendometer/fullShot.jpg" alt="Sendometer screenshot 1" />,
+                })
+              }
             />
             <img
-              src="/Sendometer/send2.jpeg"
+              src="/Sendometer/shotAbove.jpg"
               alt="Sendometer photo 2"
               className="project-image"
+              onClick={() =>
+                openWindow({
+                  id: "send2",
+                  name: "send2.jpeg",
+                  content: <ImageViewer src="/Sendometer/shotAbove.jpg" alt="Sendometer photo 2" />,
+                })
+              }
             />
           </div>
+
           <h4>This project used</h4>
           <ul>
             <li>ESP32</li>
@@ -118,17 +152,31 @@ export default function RetroDesktop() {
             plugged into a computer, where the data would be processed and visualized through a user friendly Streamlit interface.</p>
 
             <div className="image-gallery">
-            <img
-              src="/Sendometer/screenshot1.png"
-              alt="Sendometer screenshot 1"
-              className="project-image"
-            />
-            <img
-              src="/Sendometer/screen shot2.png"
-              alt="Sendometer photo 2"
-              className="project-image"
-            />
-          </div>
+              `<img
+                src="/Sendometer/screenshot1.png"
+                alt="Sendometer screenshot 1"
+                className="project-image"
+                onClick={() =>
+                  openWindow({
+                    id: "send3",
+                    name: "screenshot1.png",
+                    content: <ImageViewer src="/Sendometer/screenshot1.png" alt="Sendometer screenshot 1" />,
+                  })
+                }
+              />
+              <img
+                src="/Sendometer/screen shot2.png"
+                alt="Sendometer screenshot 2"
+                className="project-image"
+                onClick={() =>
+                  openWindow({
+                    id: "send4",
+                    name: "screenshot2.png",
+                    content: <ImageViewer src="/Sendometer/screen shot2.png" alt="Sendometer screenshot 2" />,
+                  })
+                }
+              />
+            </div>`
         </div>
       ),
     },
@@ -144,13 +192,28 @@ export default function RetroDesktop() {
               src="/3D connect 4/Game2.png"
               alt="game photo 2"
               className="project-image"
+              onClick={() =>
+                openWindow({
+                  id: "connect4-game2",
+                  name: "Game2.png",
+                  content: <ImageViewer src="/3D connect 4/Game2.png" alt="game photo 2" />,
+                })
+              }
             />
             <img
               src="/3D connect 4/Game1.png"
               alt="game photo 1"
               className="project-image"
+              onClick={() =>
+                openWindow({
+                  id: "connect4-game1",
+                  name: "Game1.png",
+                  content: <ImageViewer src="/3D connect 4/Game1.png" alt="game photo 1" />,
+                })
+              }
             />
           </div>
+
           <h3>What is it?</h3>
           <p>This is a 3D version of Connect Four, featuring a 4x4x4 grid where players aim to get four pieces in a row, 
             whether horizontally, vertically, or diagonally within a single layer or across multiple layers. The game offers two modes: 
@@ -229,17 +292,32 @@ export default function RetroDesktop() {
             <div>
               <h2>ENG1011 Bridge</h2>
               <div className="image-gallery">
-            <img
-              src="/ENG1011/bridge.png"
-              alt="screenshot of complete bridge drawing"
-              className="project-image"
-            />
-            <img
-              src="/ENG1011/section b.png"
-              alt="screenshot of section b cad"
-              className="project-image"
-            />
-          </div>
+                <img
+                  src="/ENG1011/bridge.png"
+                  alt="screenshot of complete bridge drawing"
+                  className="project-image"
+                  onClick={() =>
+                    openWindow({
+                      id: "bridge-full",
+                      name: "bridge.png",
+                      content: <ImageViewer src="/ENG1011/bridge.png" alt="Complete bridge drawing" />,
+                    })
+                  }
+                />
+                <img
+                  src="/ENG1011/section b.png"
+                  alt="screenshot of section b cad"
+                  className="project-image"
+                  onClick={() =>
+                    openWindow({
+                      id: "bridge-sectionb",
+                      name: "sectionB.png",
+                      content: <ImageViewer src="/ENG1011/section b.png" alt="Section B CAD drawing" />,
+                    })
+                  }
+                />
+              </div>
+
               <p>This bridge design was part of a project for my ENG1011 class, where my group of four was tasked with creating a bridge that met specific engineering requirements. I was primarily responsible for the CAD design and modeling throughout the project.</p>
 
             </div>
